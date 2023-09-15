@@ -1,5 +1,8 @@
 import express  from "express";
 import cors from "cors";
+import  miruta  from "./routes/rutas.routes";
+import bd from "./bases/mibase";
+
 
 const app = express();
 app.use(cors());
@@ -9,5 +12,15 @@ app.get('/', (req, res)=>{
     res.send('hoy casi pierdo clase de  node ');
 })
  app.listen(8000,()=>{
-    console.log('conected');
+    console.log('conected http://localhost:8000/');
  })
+
+ app.use('/aprendices',miruta());
+
+ try{
+
+ await bd.authenticate();
+ console.log('conexion exitosa');
+ }catch(err){
+    console.error(err);
+ }
