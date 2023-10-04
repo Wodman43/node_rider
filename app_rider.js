@@ -1,7 +1,9 @@
 import express  from "express";
 import cors from "cors";
-import  miruta  from "./routes/rutas.routes";
-import bd from "./bases/mibase";
+import  miruta  from "./routes/rutas.routes.js";
+import bd from "./bases/mibase.js";
+
+
 
 
 const app = express();
@@ -15,7 +17,7 @@ app.get('/', (req, res)=>{
     console.log('conected http://localhost:8000/');
  })
 
- app.use('/aprendices',miruta());
+ app.use('/aprendices',miruta);
 
  try{
 

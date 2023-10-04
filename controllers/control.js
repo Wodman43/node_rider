@@ -1,4 +1,4 @@
-import datos from "../models/model";
+import datos from "../models/model.js";
 
 export const stockdatos = async (req,res)=>{
     try{
@@ -6,6 +6,5 @@ export const stockdatos = async (req,res)=>{
         res.Json(apdices);
     }catch{
         res.Json({mesaage: error.mesaage})
-        console.error(err)
     }
 }
