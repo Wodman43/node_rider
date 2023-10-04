@@ -5,11 +5,11 @@ import bd from "./bases/mibase.js";
 
 
 
-
 const app = express();
 app.use(cors());
 
 app.use(express.json());
+
 app.get('/', (req, res)=>{
     res.send('hoy casi pierdo clase de  node ');
 })
@@ -20,9 +20,13 @@ app.get('/', (req, res)=>{
  app.use('/aprendices',miruta);
 
  try{
-
  await bd.authenticate();
  console.log('conexion exitosa');
+
  }catch(err){
     console.error(err);
  }
+
+ app.post('/', (req, res)=>{
+   
+ })

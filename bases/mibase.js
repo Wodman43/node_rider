@@ -1,7 +1,7 @@
 import  Sequelize  from "sequelize";
 
 const bd = new Sequelize('aprendices','root','root',{
-    host: 'localhost',
+    host: 'localhost',  
     dialect: 'mysql'   
 })
 
