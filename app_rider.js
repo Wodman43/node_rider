@@ -1,6 +1,7 @@
 import express  from "express";
 import cors from "cors";
-import  miruta  from "./routes/rutas.routes.js";
+import  miruta  from "./routes/estu.routes.js";
+import instrurut from "./routes/instru.routes.js";
 import bd from "./bases/mibase.js";
 
 
@@ -10,6 +11,7 @@ app.use(cors());
 
 app.use(express.json());
 
+
 app.get('/', (req, res)=>{
     res.send('hoy casi pierdo clase de  node ');
 })
@@ -17,7 +19,8 @@ app.get('/', (req, res)=>{
     console.log('conected http://localhost:8000/');
  })
 
- app.use('/aprendices',miruta);
+ app.use('/estudiantes',miruta);
+ app.use('/instructor',instrurut);
 
  try{
  await bd.authenticate();

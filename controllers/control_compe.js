@@ -1,0 +1,1 @@
+import datoscompe from "../models/model_compe.js";
