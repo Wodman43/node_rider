@@ -1,4 +1,9 @@
+
 import datosEstudiates from "../models/model_estu.js";
+
+import {datoscurso} from '../bases/indexbd.js';
+
+import bcrypt from 'bcryptjs';
 
 export const stockdatos = async (req,res)=>{
     try{
@@ -59,16 +64,41 @@ export const deleteApdz = async (req, res)=>{
     }
 }
 
+
+
 export const getAllestudiantes = async (req,res)=>{
+
+    const {nombre,apellido,password,email} = req.body;
     try{
-        const estantes = await datosEstudiates.findAll();
+        const estantes = await datosEstudiates.findAll({
+            include:{
+                model: datoscurso
+            }
+        });
         res.json(estantes);
         console.log(estantes);
         
     }catch(error){
         res.json({mesaage: error.mesaage})
     }
+    try{
+
+        const passwordHash = await bcrypt.hash(password,10);
+        const newUser = new datosEstudiates({
+            nombre,
+            apellido,
+            password:passwordHash,
+            email,
+        });
+        const userSaved= await newUser.save();
+        res.json(userSaved);
+    }catch(err){
+        console.log(err);
+    }
 }
+
+
+
 
 export const getEstudiante = async (req, res)=>{
     try{

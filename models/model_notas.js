@@ -20,7 +20,7 @@ const datosnotas = bd.define('notas',{
       allowNull: false,
     }
   },{
-    tablename: 'notas',
+    tableName: 'notas',
     timestamps: false,
   });
 

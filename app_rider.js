@@ -3,6 +3,10 @@ import cors from "cors";
 import  miruta  from "./routes/estu.routes.js";
 import instrurut from "./routes/instru.routes.js";
 import bd from "./bases/mibase.js";
+import cursorut from "./routes/curso.routes.js";
+import comperut from "./routes/compe.routes.js";
+import notasrut from "./routes/notas.routes.js";
+import resultrut from "./routes/result.routes.js";
 
 
 
@@ -21,6 +25,10 @@ app.get('/', (req, res)=>{
 
  app.use('/estudiantes',miruta);
  app.use('/instructor',instrurut);
+ app.use('/curso',cursorut);
+ app.use('/competencia',comperut);
+ app.use('/notas',notasrut);
+ app.use('/resultado',resultrut);
 
  try{
  await bd.authenticate();

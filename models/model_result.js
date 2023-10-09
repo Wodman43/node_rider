@@ -20,7 +20,7 @@ const datosresultado = bd.define('resultados',{
       allowNull: false,
     }
   },{
-    tablename: 'resultados',
+    tableName: 'resultados',
     timestamps: false,
   });
 

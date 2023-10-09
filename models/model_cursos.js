@@ -12,7 +12,7 @@ import { DataTypes } from 'sequelize';
       allowNull: false,
     }
   },{
-    tablename: 'curso',
+    tableName: 'curso',
     timestamps: false,
   });
 

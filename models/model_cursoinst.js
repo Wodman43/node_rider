@@ -12,7 +12,7 @@ const datoscursoints = bd.define('curso_instrucor',{
       allowNull: false,
     }
   },{
-    tablename: 'curso_instrucor',
+    tableName: 'curso_instrucor',
     timestamps: false,
   });
 

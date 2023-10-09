@@ -18,7 +18,7 @@ const datoscompe = bd.define('competencia',{
       allowNull:false,
     }
   },{
-    tablename: 'competencia',
+    tableName: 'competencia',
     timestamps: false,
   });
 

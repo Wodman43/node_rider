@@ -1,6 +1,6 @@
 import bd from '../bases/mibase.js';
 import { DataTypes } from 'sequelize';
-import datoscurso from '../models/model_cursos.js'
+// import datoscurso from '../models/model_cursos.js'
 
 
      const datosEstudiates = bd.define('estudiantes', {
@@ -27,11 +27,11 @@ import datoscurso from '../models/model_cursos.js'
       },
       curso_id_curso:{
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
       }
       });
 
-      datoscurso.hasMany(datosEstudiates, { foreignKey: 'curso_id_curso' });
-      datosEstudiates.belongsTo(datoscurso, { foreignKey: 'curso_id_curso' });
+      // datoscurso.hasMany(datosEstudiates, { foreignKey: 'curso_id_curso' });
+      // datosEstudiates.belongsTo(datoscurso, { foreignKey: 'curso_id_curso' });
 
 export default datosEstudiates;
